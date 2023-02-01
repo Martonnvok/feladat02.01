@@ -1,6 +1,8 @@
 #egy komment
 jlapok=[1,2,3,4,5]
 glapok=[6,7,8,9,10]
+def kiirat(jatekos: list, gep: list):
+    kiirat = ""
 def osszeg(lap):
     ossz = 0
     for i in lap:
@@ -8,9 +10,10 @@ def osszeg(lap):
 
     return osszeg
 
-def eredmeny(jatekos, gep  ):
+def eredmeny(jatekos: list, gep: list  ):
     if osszeg(jatekos) > 21:
-        print("A játékos Vesztett")
+        kiirat="A játkos vesztett"
     elif osszeg(gep) > 21:
-        print("A gép vesztett")
+        kiirat="A gép vesztett"
 
+eredmeny(jlapok, glapok)
