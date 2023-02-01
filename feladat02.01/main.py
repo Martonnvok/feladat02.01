@@ -1,0 +1,2 @@
+import eredmeny
+eredmeny.eredmeny()
