@@ -1,19 +1,29 @@
 #egy komment
-jlapok=[1,2,3,4,5]
-glapok=[6,7,8,9,10]
-def kiirat(jatekos: list, gep: list):
-    kiirat = ""
-def osszeg(lap):
-    ossz = 0
-    for i in lap:
-        ossz += i
+def eredmeny(jatekoslapok: [int], geplapok: [int]):
+    jatekospont: int = szamolas(jatekoslapok)
+    geppont: int = szamolas(geplapok)
+    if jatekospont > 21:
+        return "játékos vesztett"
+    elif geppont > 21:
+        return "gép vesztett"
 
-    return osszeg
+def szamolas(lapok)->int:
+    pontok: int = 0
+    i: int = 0
+    while i < len(lapok):
+        pontok += lapok[i]
+        i += 1
+    return pontok
 
-def eredmeny(jatekos: list, gep: list  ):
-    if osszeg(jatekos) > 21:
-        kiirat="A játkos vesztett"
-    elif osszeg(gep) > 21:
-        kiirat="A gép vesztett"
+def jatekos_vesztett_teszt():
+    jLapok = [1, 2, 3, 4]
+    gLapok = [5, 6]
 
-eredmeny(jlapok, glapok)
+    print(eredmeny(jLapok, gLapok))
+
+
+def tesztek():
+    jatekos_vesztett_teszt()
+
+
+tesztek()
